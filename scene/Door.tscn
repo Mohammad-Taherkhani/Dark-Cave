@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6fb3cwiv4nem"]
+
+[ext_resource type="Script" path="res://Door.gd" id="1_tsin7"]
+[ext_resource type="Texture2D" uid="uid://bdw55dny8uj0y" path="res://Assets/World/mainlev_build.png" id="2_jmvws"]
+[ext_resource type="PackedScene" uid="uid://yrxy36f6t4dj" path="res://scene/level2.tscn" id="2_pqugc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roiwa"]
+size = Vector2(34, 54)
+
+[node name="Door" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+collision_priority = 0.0
+script = ExtResource("1_tsin7")
+target_scene = ExtResource("2_pqugc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jmvws")
+hframes = 13
+vframes = 11
+frame = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
+shape = SubResource("RectangleShape2D_roiwa")
+debug_color = Color(0.871248, 0.000485543, 0.846799, 0.42)
